@@ -30,7 +30,11 @@
         <textarea class="textarea" placeholder="" rows="10">{{:source}}</textarea>
       </div>
     </div>
+          
+  </script>         
     
+  <script id="tpl_summary" type="text/x-jsrender">
+
     <div class="field">
       <label class="label">Opsummering</label>
       <div class="control">
@@ -38,8 +42,8 @@
       </div>
     </div>
           
-  </script>         
-
+  </script>       
+    
   <script id="tpl_stories" type="text/x-jsrender">
 
     {{for stories}}
@@ -74,6 +78,7 @@
     var templates = {};
     templates['meta'] = $.templates("#tpl_meta");
     templates['stories'] = $.templates("#tpl_stories");
+    templates['summary'] = $.templates("#tpl_summary");
     
   </script>
 
