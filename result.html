@@ -51,7 +51,7 @@
           <div class="media-content">
             <div class="content">
               <p>
-                <strong>{{:title}}</strong> <small>@johnsmith</small> <small>31m</small>
+                <small>{{if source}}{{:source}}{{else}}{{:domain}}{{/if}}:</small> <strong>{{:title}}</strong>
                 <br>
                 {{:snippet}}
               </p>
