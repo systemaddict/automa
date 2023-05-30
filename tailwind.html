@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="flex justify-center items-center h-screen">
+  <form class="w-full max-w-md" action="https://oj-nyhedsbrev.tv2reg.digital/subscribe/8f335946-b361-4e68-ba62-7b1da9489865" method="post">
+    <div>
+      <label class="block font-bold my-2" for="email">E-mail</label>
+      <input id="email" class="border p-2 rounded w-full" type="email" name="email" placeholder="Indtast din e-mail-adresse" />
+    </div>
+    
+    <div>
+      <label class="block font-bold my-2" for="first_name">Fornavn</label>
+      <input id="first_name" class="border p-2 rounded w-full" name="first_name" placeholder="Indtast dit fornavn" />
+    </div>
+    
+    <div>
+      <label class="block font-bold my-2" for="last_name">Efternavn</label>
+      <input id="last_name" class="border p-2 rounded w-full" name="last_name" placeholder="Indtast dit efternavn" />
+    </div>
+    
+    <input type="text" name="important" class="hidden">
+    
+    <input class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded mt-4 w-full cursor-pointer" type="submit" value="Tilmeld" aria-label="Tilmeld dig nyhedsbrevet">
+  </form>
+</div>
+</body>
+</html>
