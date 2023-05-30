@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Resultater</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
 
+      <div class="columns">
+        <div class="column is-two-thirds" id="content"></div>
+        <div class="column" id="meta"></div>
+      </div>
+      
+    </div>
+  </section>
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.3.0/luxon.min.js" integrity="sha512-KKbQg5o92MwtJKR9sfm/HkREzfyzNMiKPIQ7i7SZOxwEdiNCm4Svayn2DBq7MKEdrqPJUOSIpy1v6PpFlCQ0YA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.13/jsrender.min.js" integrity="sha512-T93uOawQ+FrEdyCPaWrQtppurbLm8SISu2QnHyddM0fGXKX9Amyirwibe1wGYbsW2F8lLzhOM/2+d3Zo94ljRQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   
+
+  <script id="tpl_meta" type="text/x-jsrender">
+            
+    <div class="field">
+      <label class="label">Kildetekst</label>
+      <div class="control">
+        <textarea class="textarea" placeholder="" rows="10">{{:source}}</textarea>
+      </div>
+    </div>
+          
+  </script>         
+    
+  <script id="tpl_summary" type="text/x-jsrender">
+
+    <div class="field">
+      <label class="label">Opsummering</label>
+      <div class="control">
+        <textarea class="textarea" placeholder="" rows="15">{{:summary}}</textarea>
+      </div>
+    </div>
+          
+  </script>       
+    
+  <script id="tpl_stories" type="text/x-jsrender">
+
+    {{for stories}}
+      <div class="box">
+        <article class="media">
+        
+        {{if thumbnail}}
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="{{:thumbnail}}" alt="Image">
+          </figure>
+        </div>
+        {{/if}}
+        
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <small>{{if source}}{{:source}}{{else}}{{:domain}}{{/if}}:</small> <strong>{{:title}}</strong>
+                <br>
+                {{:snippet}} | Link: <a href="{{:link}}" target="_blank">{{:domain}}</a>
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    {{/for}}
+  
+  </script>
+    
+  <script>
+    
+    var templates = {};
+    templates['meta'] = $.templates("#tpl_meta");
+    templates['stories'] = $.templates("#tpl_stories");
+    templates['summary'] = $.templates("#tpl_summary");
+    
+  </script>
+
+
+  </body>
+</html>
